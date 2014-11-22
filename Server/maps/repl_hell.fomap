@@ -1,9 +1,9 @@
 [Header]
-Version              2
+Version              5
 MaxHexX              164
 MaxHexY              145
-WorkHexX             101
-WorkHexY             71
+WorkHexX             95
+WorkHexY             44
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -6088,22 +6088,6 @@ MapX                 93
 MapY                 111
 
 MapObjType           2
-ProtoId              2183
-MapX                 109
-MapY                 51
-ScriptName           replication_terminal
-FuncName             s_Terminal
-Scenery_CanUse       1
-
-MapObjType           2
-ProtoId              2183
-MapX                 75
-MapY                 75
-ScriptName           replication_terminal
-FuncName             s_Terminal
-Scenery_CanUse       1
-
-MapObjType           2
 ProtoId              5018
 MapX                 64
 MapY                 39
@@ -9788,22 +9772,6 @@ MapX                 119
 MapY                 66
 
 MapObjType           2
-ProtoId              2183
-MapX                 75
-MapY                 51
-ScriptName           replication_terminal
-FuncName             s_Terminal
-Scenery_CanUse       1
-
-MapObjType           2
-ProtoId              2183
-MapX                 109
-MapY                 75
-ScriptName           replication_terminal
-FuncName             s_Terminal
-Scenery_CanUse       1
-
-MapObjType           2
 ProtoId              2251
 MapX                 82
 MapY                 66
@@ -9909,55 +9877,6 @@ MapX                 130
 MapY                 30
 
 MapObjType           2
-ProtoId              3852
-MapX                 89
-MapY                 66
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
-ProtoId              3852
-MapX                 90
-MapY                 65
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
-ProtoId              3852
-MapX                 91
-MapY                 66
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
-ProtoId              3852
-MapX                 92
-MapY                 65
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
-ProtoId              3852
-MapX                 93
-MapY                 66
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
-ProtoId              3852
-MapX                 94
-MapY                 65
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
-ProtoId              3852
-MapX                 95
-MapY                 66
-ScriptName           replication_hell
-FuncName             t_Electro
-
-MapObjType           2
 ProtoId              2067
 MapX                 97
 MapY                 38
@@ -9998,106 +9917,6 @@ MapObjType           2
 ProtoId              2067
 MapX                 72
 MapY                 38
-
-MapObjType           2
-ProtoId              2067
-MapX                 108
-MapY                 75
-
-MapObjType           2
-ProtoId              2067
-MapX                 108
-MapY                 74
-
-MapObjType           2
-ProtoId              2067
-MapX                 109
-MapY                 74
-
-MapObjType           2
-ProtoId              2067
-MapX                 110
-MapY                 74
-
-MapObjType           2
-ProtoId              2067
-MapX                 110
-MapY                 75
-
-MapObjType           2
-ProtoId              2067
-MapX                 108
-MapY                 51
-
-MapObjType           2
-ProtoId              2067
-MapX                 108
-MapY                 50
-
-MapObjType           2
-ProtoId              2067
-MapX                 109
-MapY                 50
-
-MapObjType           2
-ProtoId              2067
-MapX                 110
-MapY                 50
-
-MapObjType           2
-ProtoId              2067
-MapX                 110
-MapY                 51
-
-MapObjType           2
-ProtoId              2067
-MapX                 74
-MapY                 51
-
-MapObjType           2
-ProtoId              2067
-MapX                 74
-MapY                 50
-
-MapObjType           2
-ProtoId              2067
-MapX                 75
-MapY                 50
-
-MapObjType           2
-ProtoId              2067
-MapX                 76
-MapY                 50
-
-MapObjType           2
-ProtoId              2067
-MapX                 76
-MapY                 51
-
-MapObjType           2
-ProtoId              2067
-MapX                 74
-MapY                 75
-
-MapObjType           2
-ProtoId              2067
-MapX                 74
-MapY                 74
-
-MapObjType           2
-ProtoId              2067
-MapX                 75
-MapY                 74
-
-MapObjType           2
-ProtoId              2067
-MapX                 76
-MapY                 74
-
-MapObjType           2
-ProtoId              2067
-MapX                 76
-MapY                 75
 
 MapObjType           2
 ProtoId              2251
@@ -10363,28 +10182,6 @@ MapObjType           2
 ProtoId              5021
 MapX                 96
 MapY                 37
-
-MapObjType           0
-ProtoId              480
-MapX                 92
-MapY                 66
-Dir                  5
-ScriptName           replication_hell
-FuncName             _TurretInit
-Critter_Cond         1
-Critter_CondExt      1
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  0
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  19
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  1
 
 MapObjType           2
 ProtoId              2067
@@ -10772,11 +10569,5 @@ MapObjType           2
 ProtoId              2067
 MapX                 96
 MapY                 100
-
-MapObjType           1
-ProtoId              546
-MapX                 92
-MapY                 66
-Item_InContainer     1
 
 

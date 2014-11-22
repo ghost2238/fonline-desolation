@@ -1,3 +1,5 @@
+/Client/data/cache/default.cache
+
 /Server/maps/*.fomapb
 /Server/scripts/*.fosb
 /Server/scripts/*.fosp
@@ -6,3 +8,4 @@
 /Server/profiler/*
 
 /Tools/DialogEditor/DialogEditor.log
+/Tools/Mapper/**
