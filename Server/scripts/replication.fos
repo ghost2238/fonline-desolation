@@ -108,42 +108,10 @@ void ReplicateCritter( Critter& cr ) // Export
     Map@   map = null;
     uint16 hx = 0, hy = 0;
 
-    // Check car
-    Item@[] cars;
-    cr.GetItemsByType( ITEM_TYPE_CAR, cars );
-    if( cars.length() > 0 )
-    {
-        // Transit to random encounter
-        bool transferred = false;
-        uint encounterDescriptor = uint( -1 );
-        bool waitForAnswer = false;
-        FindEncounter( cr.GetGlobalGroup(), cars[ 0 ], cr.WorldX, cr.WorldY, encounterDescriptor, waitForAnswer, true );
-        if( encounterDescriptor != uint( -1 ) )
-        {
-            uint   mapId = 0;
-            uint16 hexX = 0;
-            uint16 hexY = 0;
-            uint8  dir = 0;
-            InviteToEncounter( cr.GetGlobalGroup(), cars[ 0 ], encounterDescriptor, COMBAT_MODE_ANY, mapId, hexX, hexY, dir );
-            if( mapId != 0 && cr.TransitToMap( mapId, hexX, hexY, dir ) )
-                transferred = true;
-        }
-
-        // Encounter not founded or transfer fail, delete cars
-        if( !transferred )
-        {
-            for( uint i = 0; i < cars.length(); i++ )
-                DeleteItem( cars[ i ] );
-        }
-
-        // Continue dead
-        cr.TimeoutBase[ TO_REPLICATION ] = __FullSecond + REAL_MINUTE( 1 );
-        return;
-    }
-
     if( cr.IsPlayer() )
     {
         @map = GetNearReplicatorMap( cr );
+        return;
 
         if( not valid( map ) || not GetEntireFreeHex( map, ENTIRE_REPLICATION, hx, hy ) )
         {
