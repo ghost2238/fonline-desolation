@@ -1060,17 +1060,7 @@ void critter_respawn( Critter& cr )
 // Call on something critter in to map.
 void map_critter_in( Map& map, Critter& cr )
 {
-    if( cr.IsPlayer() )
-    {
-        uint16 locPid = map.GetLocation().GetProtoId();
-        if( LOCATION_IS_CITY( locPid ) )
-        {
-            GameVar@ lastCityVar = GetLocalVar( LVAR_last_city, cr.Id );
-            if( lastCityVar is null )
-                return;
-            lastCityVar = locPid;
-        }
-    }
+
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
