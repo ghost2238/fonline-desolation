@@ -1,0 +1,98 @@
+
+#
+# Local map
+#
+
+# Name, (pid + 1) * 10 + 0
+# Music, (pid + 1) * 10 + 5
+# Ambient, (pid + 1) * 10 + 6
+# NoLogOut, (pid + 1) * 10 + 7
+
+# Map 0, Global, base 10
+{10}{}{Worldmap}
+{15}{}{07desert}
+{16}{}{blank:100}
+
+# Map 225, base 2260
+{2260}{}{Hell}
+{2265}{}{08vats}
+{2266}{}{electri1:15, electric:15, elevator:20, elevato1:15, steam:20, steam:15}
+
+# Map 301, base 3020
+{3020}{}{Desert Encounter 1}
+{3025}{}{07desert}
+{3026}{}{gustwind:20, gustwin1:20, rattle:15, rattle1:15, vulture:15, vulture1:15}
+
+#
+# Global map
+#
+
+# Name, (pid + 100) * 1000 + 0
+# Info, (pid + 100) * 1000 + 5
+# Location picture, (pid + 100) * 1000 + 20
+# Tab picture, (pid + 100) * 1000 + 30
+# Count entires, (pid + 100) * 1000 + 90
+# Entire X name, (pid + 100) * 1000 + 100 + X*10 + 1
+# Entire X pic x, (pid + 100) * 1000 + 100 + X*10 + 2
+# Entire X pic y, (pid + 100) * 1000 + 100 + X*10 + 3
+
+# Replication Hell, pid 44, base 144000
+{144000}{}{Special Station of Replication}
+{144005}{}{You see the replication station for debtors commonly known as Hell.}
+{144030}{}{art\intrface\WM_HELL.png}
+
+# Desert encounter 1, pid 101, base 201000
+{201000}{}{Desert}
+{201005}{}{Ordinary desert.}
+
+#
+# Worldmap Encounter messages
+#
+
+{10000010}{}{You encounter: @lex who@.}
+{10000011}{}{You encounter: @lex who@ and @lex player@.}
+{10000012}{}{You encounter: @lex who@ and @lex player@ group.}
+{10000013}{}{You encounter: @lex player@.}
+{10000014}{}{You encounter: @lex player@ group.}
+{10000020}{}{Do you wish to encounter: @lex who@.}
+{10000021}{}{Do you wish to encounter: @lex who@ and @lex player@.}
+{10000022}{}{Do you wish to encounter: @lex who@ and @lex player@ group.}
+{10000023}{}{Do you wish to encounter: @lex player@.}
+{10000024}{}{Do you wish to encounter: @lex player@ group.}
+
+# Encounter Table 0 (Fallout 1 + FOnline global table)
+{10030000}{}{A party of raiders}
+{10030010}{}{Some radscorpions}
+{10030020}{}{Giant rats}
+{10030030}{}{A merchant party}
+{10030040}{}{<Special>}
+{10030050}{}{someone unknown}
+{10030060}{}{The church of Brock and Xander}
+{10030070}{}{A traveller}
+{10030080}{}{головорезов из банды Шакалы Карлоса}
+
+# Encounter Table 1
+{10030500}{}{A party of raiders}
+{10030510}{}{Some manti}
+{10030520}{}{A group of geckos}
+{10030530}{}{A group of mole rats}
+{10030540}{}{A group of radscorpions}
+{10030550}{}{A group of giant rats}
+{10030560}{}{A merchant party}
+{10030570}{}{<Special>}
+
+# Encounter Table 2
+{10031000}{}{A party of raiders}
+{10031010}{}{A group of radscorpions}
+{10031020}{}{A group of giant rats}
+{10031030}{}{A merchant party}
+{10031040}{}{<Special>}
+
+# Encounter Table 3
+{10031500}{}{A party of raiders}
+
+# Encounter Table 4
+{10032000}{}{A party of raiders}
+
+# Encounter Table 5
+{10032500}{}{A party of raiders}

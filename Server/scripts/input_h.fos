@@ -1,0 +1,12 @@
+#ifndef __INPUT__
+#define __INPUT__
+
+#include "_client_defines.fos"
+
+import bool IsKeyPressed( int key ) from "input";
+import bool IsMousePressed( int button ) from "input";
+// import bool get_CtrlDown() from "input";
+// import bool get_AltDown() from "input";
+// import bool get_ShiftDown() from "input";
+
+#endif // __INPUT__

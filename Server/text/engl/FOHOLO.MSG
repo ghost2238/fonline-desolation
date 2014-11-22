@@ -1,0 +1,47 @@
+# Created: 08.11.2007 03:40 Cvet
+# Updated: 29.10.2008 23:18 Cvet
+
+{1}{}{Holodisk has been read successfully.}
+{2}{}{Error reading holodisk.}
+{3}{}{Data is already stored in your Pip-Boy.}
+{4}{}{Not enough memory, please clear up some space.}
+{5}{}{Delete successful.}
+{6}{}{Failed to delete record.}
+{7}{}{Holodisk rewrited.}
+{8}{}{Unable to rewrite holodisk.}
+
+#
+# Format:
+# Name - Number * 10
+# Text - Number * 10 + 1
+
+#
+# Fallout 1 Holodisks
+#
+
+# 1
+#
+{10}{}{FEV Experiment Disk}
+{11}{}{Log Date March 21, 2075
+Major Barnett has ordered experiments with batch 10-011 of panimmunity virion, which has been renamed FEV, for Forced Evolutionary Virus. His main concern is with the side effects of the quad-helix structure rather than its main effect of replicative stability. He believes the new structure is the next logical step for mammalian nuclei. Experiments with single-celled organisms is a great success. While their basal metabolism appears unchanged, their immunity to infection and radiation is exceeding all earlier expectations. Addendum: choroplasts seem unaffected by the virion. Further experiments on plant cells have been canceled by order of Major Barnett. 
+
+Log Date May 9, 2075
+We infected several species of flatworm with FEV. Within hours the worms had increased in size by 28%, and 39 separate viral contagions were resisted by the population. Each sample was allowed to continue for several generations, and the new DNA structure was successfully passed on to worm's progeny, although only asexual reproduction was noticed in the samples. Experiments with insects have had less success. Major Barnett has postponed these experiments until further notice. 
+
+Log Date June 30, 2075
+Several lab strains of white mice have been infected successfully with FEV. Again, an increase in size was noted within hours, and after 9 days all mice had stabilized at 31% larger than the control group. Dissection revealed the most increase in size in striated muscle tissue and certain internal organs, such as the liver, heart, and kidneys. In a surprising finding, the infected mice were found to run mazes in less than half of the time of the control group. More testing will be needed to confirm this finding as significant. 
+
+Log Date November 9, 2075
+We have infected 218 rabbits with FEV. Half of the subjects were implanted with electrodes to monitor EEG activity before and after the infection. Increased electrical activity in the brain was noted in 3.2 seconds (on average) after injection. Again, the typical size increase was noted. However, increased aggression and posturing (especially among males) was noted as well. Sacrifice and profusion yielded brain tissue that showed increased dendritic connection, especially in the limbic system and frontal cortex. 
+
+Log Date January 12, 2076
+With batch 11-011, we have improved the mitotic cycle efficiency by 43%. We have infected 53 raccoons with the new strain. In addition to the now expected size increase, behavioral tests confirmed an increase in intelligence and manual dexterity by 19 points on the Schuler-Kapp index. Unfortunately, several subjects escaped confinement and had to be hunted down and dispatched. Major Barneet ordered the remaining subjects terminated.Two pairs were unaccounted for. 
+
+Log Date May 13, 2076
+We have spliced several new gene sequences, supplied by Major Barnett's advisory team, into FEV. With batch 11-101a, we infected 23 dogs of both pure and mixed breed, and all experienced nearly immediate growth. The larger size was accompanied with increased aggressiveness, while no significant intelligence increase was noted. We plan to attempt crossover of 92 allele pairs with batch 11-011. All subjects were terminated after 14 weeks of study. 
+
+Log Date October 4, 2076
+The crossover has been completed and 15 chimpanzees were infected with batch 11-111. Growth and immunity levels are unprecedented. Attempts to induce cancers in the subjects through radiological and chemical agents were not successful. Increased aggressiveness have led to isolating the subjects. Two subjects suffered violent epileptic seizures and died. All remaining subjects terminated. 
+
+Log Date January 7, 2077
+Major Barnett has ordered transfer of all FEV research to the Mariposa Military Base. He plans to continue the project experiments on volunteer subjects. I am against this, and would like it noted here that research on human subjects is not recommended by myself or my staff.}

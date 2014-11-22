@@ -1,0 +1,69 @@
+# TODO:
+# 1000 - 1530
+
+# DONE:
+
+# Use
+{1500}{}{The distillation device is out of order.}
+{1501}{}{Firewood needed.}
+{1502}{}{You watch as the firewood burns in the stove.}
+{1503}{}{There is a fresh-brewed beer in a tank!}
+{1504}{}{The tank with home-distilled alcohol is brimmed!}
+# Use empty bottles
+{1505}{}{You poured beer into the bottles.}
+{1506}{}{You poured alcohol into the bottles.}
+{1507}{}{You don't have enough bottles.}
+# Use firewood
+{1508}{}{This device is broken.}
+{1509}{}{Need more firewood. What you have is probably not enough.}
+{1510}{}{You don't know what ingredients to use and what the poportions are.}
+{1511}{}{You prepared and poured in the stuff. You lit a fire in the stove. Distillation has begun.}
+{1512}{}{You lit a fire in the stove and poured in the stuff. Home-distillated vodka is filling the tank.}
+{1513}{}{There is enough wood there already.} 
+{1514}{}{At first you have to pour out brewed beer.}
+{1515}{}{At first you have to pour out distilled vodka.}
+# To broke
+{1516}{}{You have just broken the brewerage device.}
+{1517}{}{You have just broken the distillating device.} 
+{1518}{}{The boiler did not withstand the pressure and exploded!}
+{1519}{}{Your eyes were splattered with boiling water.}
+# Repair
+{1520}{}{Looks like you need some details.}
+{1521}{}{You need tools to fix this.}
+{1522}{}{You have succesfully fixed the device.}
+{1523}{}{You have failed at repairing and broken some details.}
+# Science
+{1524}{}{Device can be adjusted, but you need a wrench or something like that.}
+{1525}{}{You broke your wrench. As well as the device.}
+{1526}{}{During adjustment you dismounted half of the device. Now you need to assemble it back somehow.}
+{1527}{}{You adjusted something carefully but it was useless.}
+{1528}{}{You have adjusted the brewerage device. Now you'll need much less firewood.}
+{1529}{}{You have adjusted the distillation device. Now you'll need much less firewood.}
+{1530}{}{You have failed to adjust the device. Luckily, nothing got broken.}
+# Scenery
+{1560}{}{Some cereals lay here. They are cleansed and dried.}
+{1561}{}{Fermentation of raw materials for alcohol takes place in these tanks.}
+
+
+#
+# Car, car.fos
+#
+
+{2100}{}{Number: @lex number@. Fuel: @lex fuel@/@lex fuel_tank@. Damage: @lex wear@%.}
+
+#
+# Getting firewood from tree (use axe on tree)
+#
+
+{2200}{}{This is suitable tree. You could cut fide wood... if your hands were okay.}
+{2201}{}{You need to rest.}
+{2202}{}{You hit your hand instead of tree!}
+{2203}{}{You've cut some fire wood.}
+{2204}{}{You've cut some fire wood, but can't carry it all.}
+{2205}{}{You've cut some fire wood, but can't carry it at all.}
+
+#
+# Rangers
+#
+
+{2300}{}{Your target was liquidated by another ranger. Return to the outpost to get a new assignment.}

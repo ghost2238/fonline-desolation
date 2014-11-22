@@ -1,0 +1,17 @@
+#
+#
+#
+
+{4}{}{%d. }
+{5}{}{Current progress: }
+
+#
+# ID
+# Quest name
+#
+
+#
+# Formulas are:
+#	ID * 1000 + %exp%. (1-100) - Text player sees with quest var equal to %exp%.
+#	ID * 1000 + 101 - Quest tab name.
+#	ID * 1000 + 102 - Overall quest description.

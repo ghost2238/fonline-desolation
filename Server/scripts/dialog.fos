@@ -1,0 +1,5 @@
+// Author: cvet, heX, Тринитротолуол, Tab10id
+#include "_macros.fos"
+
+import void FlushScreen( Critter& cr, bool fadeOut, uint timeMs ) from "effects";
+

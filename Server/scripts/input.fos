@@ -1,0 +1,305 @@
+#include "_client_defines.fos"
+#include "_msgstr.fos"
+#include "gui_h.fos"
+
+import void TryExit() from "gui_screens";
+
+bool[] KeyPressed;
+bool[] MousePressed;
+
+// Export
+bool IsKeyPressed( int key )      { return KeyPressed[ key ]; }
+bool IsMousePressed( int button ) { return MousePressed[ button ]; }
+bool get_CtrlDown()               { return KeyPressed[ DIK_RCONTROL ] || KeyPressed[ DIK_LCONTROL ]; }
+bool get_AltDown()                { return KeyPressed[ DIK_LMENU ] || KeyPressed[ DIK_RMENU ]; }
+bool get_ShiftDown()              { return KeyPressed[ DIK_LSHIFT ] || KeyPressed[ DIK_RSHIFT ]; }
+
+bool[] @ GetKeyPressed()
+{
+    return KeyPressed;
+}
+bool[] @ GetMousePressed()
+{
+    return MousePressed;
+}
+
+class ScriptInitializer
+{
+    ScriptInitializer()
+    {
+        KeyPressed.resize( 0x100 );
+        MousePressed.resize( MOUSE_BUTTON_EXT4 + 1 );
+    }
+}
+ScriptInitializer _ScriptInitializer;
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Mouse behaviours. Button states look in _client_defines.fos, Mouse buttons.
+// Return true to disable engine events.
+void mouse_down( int button ) // Engine callback
+{
+    MousePressed[ button ] = true;
+
+    GUI_EngineCallback_MouseDown( button );
+}
+
+void mouse_up( int button ) // Engine callback
+{
+    MousePressed[ button ] = false;
+
+    GUI_EngineCallback_MouseUp( button );
+}
+
+void mouse_move() // Engine callback
+{
+    GUI_EngineCallback_MouseMove();
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Keyboard behaviours. Key codes look in _client_defines.fos DirectInput keyboard scan codes.
+// Return true to disable engine events.
+void key_down( uint8 key, string@ text ) // Engine callback
+{
+    // Avoid repeating
+    if( KeyPressed[ key ] )
+    {
+        if( key != DIK_TEXT && key != DIK_SPACE && key != DIK_BACK && key != DIK_DELETE && key != DIK_LEFT && key != DIK_RIGHT )
+            return;
+    }
+    KeyPressed[ key ] = true;
+
+    // Hotkeys handler
+    bool isHotkey = HandleHotkeys( key );
+
+    // GUI handler
+    if( !isHotkey )
+        GUI_EngineCallback_KeyDown( key, text );
+
+    // Pressed keys
+    if( key != DIK_TEXT )
+        HandlePressedKeys();
+}
+
+void key_up( uint8 key ) // Engine callback
+{
+    // Avoid repeating
+    if( !KeyPressed[ key ] )
+        return;
+    KeyPressed[ key ] = false;
+
+    // GUI handler
+    GUI_EngineCallback_KeyUp( key );
+
+    // Pressed keys
+    if( key != DIK_TEXT )
+        HandlePressedKeys();
+}
+
+// //////////////////////////////////////////////////////////////////////////////////////////////////
+// Called on mouse/keyboard input lost (alt-tab, minimize, lost focus).
+void input_lost() // Engine callback
+{
+    // Reset states
+    for( uint i = 0, j = KeyPressed.length(); i < j; i++ )
+        KeyPressed[ i ] = false;
+    for( uint i = 0, j = MousePressed.length(); i < j; i++ )
+        MousePressed[ i ] = false;
+
+    // GUI handler
+    GUI_EngineCallback_InputLost();
+
+    // Pressed keys
+    HandlePressedKeys();
+}
+
+// Hotkeys handler
+bool HandleHotkeys( uint8 key )
+{
+    // Effect example, temporary
+    if( AltDown && key == DIK_Q )
+        SetEffect( EFFECT_FLUSH_MAP, 0, null );
+    if( AltDown && key == DIK_W )
+        SetEffect( EFFECT_FLUSH_MAP, 0, "Flush_Map_BlackWhite.glsl" );
+
+    // Hotkeys
+    bool isHotkey = true;
+    bool inputFocused = ( cast< GUITextInput >( GUI_GetFocusedObject() ) !is null );
+    if( !CtrlDown && !AltDown && !ShiftDown )
+    {
+        switch( key )
+        {
+        case DIK_F1:
+            __HelpInfo = !__HelpInfo;
+            break;
+
+        case DIK_F2:
+            if( CustomCall( "SaveLogFile" ) == "OK" )
+                Message( MSG_GAME( STR_LOG_SAVED ) );
+            else
+                Message( MSG_GAME( STR_LOG_NOT_SAVED ) );
+            break;
+        case DIK_F3:
+            if( CustomCall( "SaveScreenshot" ) == "OK" )
+                Message( MSG_GAME( STR_SCREENSHOT_SAVED ) );
+            else
+                Message( MSG_GAME( STR_SCREENSHOT_NOT_SAVED ) );
+            break;
+
+        case DIK_F4:
+            if( GUI_GetScreen( CLIENT_MAIN_SCREEN_GAME ).IsHardcoded )
+                CustomCall( "SwitchIntVisible" );
+            break;
+        case DIK_F5:
+            if( GUI_GetScreen( CLIENT_MAIN_SCREEN_GAME ).IsHardcoded )
+                CustomCall( "SwitchIntAddMess" );
+            break;
+
+        case DIK_F6:
+            __ShowPlayerNames = !__ShowPlayerNames;
+            break;
+        case DIK_F7:
+            if( __DebugInfo )
+                __ShowNpcNames = !__ShowNpcNames;
+            break;
+
+        case DIK_F8:
+            __MouseScroll = !__MouseScroll;
+            __ScrollMouseRight = false;
+            __ScrollMouseLeft = false;
+            __ScrollMouseDown = false;
+            __ScrollMouseUp = false;
+            break;
+
+        case DIK_F9:
+            if( __DebugInfo )
+                CustomCall( "SwitchShowTrack" );
+            break;
+        case DIK_F10:
+            if( __DebugInfo )
+                CustomCall( "SwitchShowHex" );
+            break;
+
+        // Fullscreen
+        case DIK_F11:
+            CustomCall( "SwitchFullscreen" );
+            break;
+        // Minimize
+        case DIK_F12:
+            CustomCall( "MinimizeWindow" );
+            break;
+
+        // Mouse wheel emulate
+        case DIK_PRIOR:
+            MouseClick( __MouseX, __MouseY, MOUSE_BUTTON_WHEEL_UP, -1 );
+            break;
+        case DIK_NEXT:
+            MouseClick( __MouseX, __MouseY, MOUSE_BUTTON_WHEEL_DOWN, -1 );
+            break;
+
+        // Text input switching
+        case DIK_TAB:
+            GUI_NextTextInput();
+            break;
+
+        // Exit
+        case DIK_ESCAPE:
+            TryExit();
+            break;
+
+        default:
+            break;
+        }
+
+        if( !inputFocused )
+        {
+            GUIScreen@ screen = GUI_GetActiveScreen();
+            if( ( key == DIK_TAB && screen.Index == CLIENT_SCREEN_CHARACTER ) ||
+                ( key == DIK_C && screen.Index == CLIENT_SCREEN_CHARACTER ) ||
+                ( key == DIK_P && screen.Index == CLIENT_SCREEN_PIP_BOY ) ||
+                ( key == DIK_F && screen.Index == CLIENT_SCREEN_FIX_BOY ) ||
+                ( key == DIK_I && screen.Index == CLIENT_SCREEN_INVENTORY ) )
+                TryExit();
+            else if( key == DIK_Q && screen.Index == CLIENT_MAIN_SCREEN_GAME )
+                CustomCall( "SwitchLookBorders" );
+            else if( key == DIK_W && screen.Index == CLIENT_MAIN_SCREEN_GAME )
+                CustomCall( "SwitchShootBorders" );
+            else if( key == DIK_SPACE && __Singleplayer )
+                CustomCall( "SwitchSingleplayerPause" );
+            else
+                isHotkey = false;
+        }
+        else
+        {
+            isHotkey = false;
+        }
+    }
+    else
+    {
+        switch( key )
+        {
+        case DIK_F6:
+            if( __DebugInfo && CtrlDown )
+                __ShowCritId = !__ShowCritId;
+            break;
+        case DIK_F7:
+            if( __DebugInfo && CtrlDown )
+                __ShowCritId = !__ShowCritId;
+            break;
+        case DIK_F10:
+            if( ShiftDown )
+                CustomCall( "DumpAtlases" );
+            break;
+
+        // Num Pad
+        case DIK_EQUALS:
+        case DIK_ADD:
+            if( !inputFocused )
+            {
+                if( CtrlDown )
+                    __SoundVolume = CLAMP( __SoundVolume + 2, 0, 100 );
+                else if( ShiftDown )
+                    __MusicVolume = CLAMP( __MusicVolume + 2, 0, 100 );
+                else if( AltDown && __FixedFPS < 10000 )
+                    __FixedFPS++;
+            }
+            break;
+        case DIK_MINUS:
+        case DIK_SUBTRACT:
+            if( !inputFocused )
+            {
+                if( CtrlDown )
+                    __SoundVolume = CLAMP( __SoundVolume - 2, 0, 100 );
+                else if( ShiftDown )
+                    __MusicVolume = CLAMP( __MusicVolume - 2, 0, 100 );
+                else if( AltDown && __FixedFPS > -10000 )
+                    __FixedFPS--;
+            }
+            break;
+
+        // Exit
+        case DIK_ESCAPE:
+            if( ShiftDown )
+                __Quit = true;
+            break;
+
+        default:
+            isHotkey = false;
+            break;
+        }
+
+        if( key == DIK_RCONTROL || key == DIK_LCONTROL || key == DIK_RCONTROL || key == DIK_LCONTROL )
+            CustomCall( "SetCursorPos" );
+    }
+    return isHotkey;
+}
+
+// Pressed keys handler
+void HandlePressedKeys()
+{
+    bool isGameWithoutConsole = ( GUI_GetActiveScreen().Index == CLIENT_MAIN_SCREEN_GAME && !__ConsoleActive && !GUI_IsConsoleActive() );
+    __MapZooming = ( isGameWithoutConsole && KeyPressed[ DIK_Z ] );
+    __ScrollKeybLeft = ( isGameWithoutConsole && KeyPressed[ DIK_LEFT ] );
+    __ScrollKeybRight = ( isGameWithoutConsole && KeyPressed[ DIK_RIGHT ] );
+    __ScrollKeybUp = ( isGameWithoutConsole && KeyPressed[ DIK_UP ] );
+    __ScrollKeybDown = ( isGameWithoutConsole && KeyPressed[ DIK_DOWN ] );
+}
