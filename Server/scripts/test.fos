@@ -1224,23 +1224,6 @@ void TestProp( Critter& cr, int, int, int )
     uint i = ( p.Test - 1 );
 }
 
-// #pragma bindfunc "uint TestFunc(int, int) -> fo_test.dll TestFunc"
-/*#pragma bindfunc "uint TestFunc(int, int) -> fo_test.dll TestFunc"
-   #pragma bindfunc "bool Critter::TestMethod(int, uint, bool) -> fo_test.dll Critter_TestMethod"
-
-   void TestDll(Critter& cr, int, int, int)
-   {
-        int i = TestFunc(1, 2);
-        Log("TestFunc = " + i);
-
-        i = cr.TestMethod(1, 2, true) ? 1 : 0;
-        Log("TestMethod " + i);
-
-        cr.SetEvent(CRITTER_EVENT_TALK, " fo_test.dll @ EventTalk ");
-        i = cr.EventTalk(cr, true,666) ? 1 : 0;
-        Log("EventTalk " + i);
-   }*/
-
 void TestScriptTimeout( Critter& cr, int, int, int )
 {
     Test2();
@@ -1964,27 +1947,6 @@ void toKO( Critter& cr, int, int, int )
 {
     cr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( true ), 1000, cr.HexX, cr.HexY );
 }
-
-#pragma bindfunc "bool TestScriptCallNative(string&, string&) -> fonline_test.dll TestScriptCallNative"
-void testScriptCall( Critter&, int, int, int )
-{
-    if( TestScriptCallNative( "test", "double TestScriptCallAS(int v1, uint64 v2, float v3, string@ v4)" ) )
-        Log( "testScriptCall success." );
-    else
-        Log( "testScriptCall fail." );
-}
-double TestScriptCallAS( int v1, uint64 v2, float v3, string@ v4 )
-{
-    Log( "TestScriptCall: " + v1 + ", " + v2 + ", " + v3 + ", " + v4 + "." );
-    return 1.234567890;
-}
-
-#pragma bindfunc "void StringExample() -> fonline_test.dll StringExample"
-void testStringExample( Critter&, int, int, int )
-{
-    StringExample();
-}
-
 
 void animate( Critter& cr, int anim1, int anim2, int )
 {
