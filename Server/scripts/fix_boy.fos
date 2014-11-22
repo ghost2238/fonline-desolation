@@ -5,47 +5,6 @@
 #define FIX_FAIL                   ( FIXBOY_DEFAULT ^ FIXBOY_ALLOW_CRAFT )
 #define GAME_DAY_MINUTES           # (days)   ( days * 60 * 24 )
 
-int fix_PowerArmor( Critter& player, int state, CraftItem& craft )
-{
-    GameVar@ canPA = GetLocalVar( LVAR_fixboy_power_armor, player.Id );
-    if( not valid( canPA ) || canPA == 0 )
-        return FIX_FAIL;
-    if( state == FIXBOY_CRAFT )
-        canPA = 0;
-    return FIX_SUCCESS;
-}
-
-int fix_VenomousRat( Critter& player, int state, CraftItem& craft )
-{
-    GameVar@ can = GetLocalVar( LVAR_mod_lourence_venomedrat_recipe, player.Id );
-    if( !valid( can ) || can == 0 )
-        return FIX_FAIL;
-    return FIX_SUCCESS;
-}
-
-int fix_SuperToxine( Critter& player, int state, CraftItem& craft )
-{
-    GameVar@ can = GetLocalVar( LVAR_mod_lourence_toxin_recipe, player.Id );
-    if( !valid( can ) || can == 0 )
-        return FIX_FAIL;
-    return FIX_SUCCESS;
-}
-
-int fix_TntRat( Critter& player, int state, CraftItem& craft )
-{
-    GameVar@ can = GetLocalVar( LVAR_mod_lourence_tnt_rat_recipe, player.Id );
-    if( !valid( can ) || can == 0 )
-        return FIX_FAIL;
-    return FIX_SUCCESS;
-}
-
-int fix_EmpRocket( Critter& player, int state, CraftItem& craft )
-{
-    GameVar@ canER = GetLocalVar( LVAR_nav_emp_rocket_recipe, player.Id );
-    if( !valid( canER ) || canER == 0 )
-        return FIX_FAIL;
-    return FIX_SUCCESS;
-}
 // Усложненный крафт
 // - для отображения в пипбое требуется знание рецепта
 // - для производства необходимо находиться рядом со специальным станком
@@ -82,64 +41,6 @@ int fix_EmpRocket( Critter& player, int state, CraftItem& craft )
 int fix_AnyStuff( Critter& player, int state, CraftItem& craft )
 {
     return fix_Something( player, SCENERY_WORKBENCH, DEFAULT_RADIUS, LVAR_fixboy_default, state, 120, 100 );
-}
-
-int fix_SuperSledge( Critter& player, int state, CraftItem& craft )  // Рецепт на изготовление суперкувалды. Ши.
-{
-    return fix_Something( player, SCENERY_SHOE_WORKBENCH, DEFAULT_RADIUS, LVAR_sf_recipe_supersledge, state, DEFAULT_TIMEOUT_MINUTES( player ), DEFAULT_CHARGES );
-}
-
-int fix_ChitinArmor( Critter& player, int state, CraftItem& craft ) // Хитиновая броня
-{
-    if( state == FIXBOY_LIST )
-    {
-        if( fix_ByRecipe( player, PID_CHITIN_ARMOR_RECIPE, state, craft ) == FIX_SUCCESS )
-            return FIX_SUCCESS;
-        return fix_Something( player, SCENERY_STOVE, 10, LVAR_sf_chitin_armor_recipe_known, state, GAME_DAY_MINUTES( 1 ), 1 );
-    }
-    if( state == FIXBOY_BUTTON )
-    {
-        return fix_Something( player, SCENERY_STOVE, 10, LVAR_sf_chitin_armor_recipe_known, state, GAME_DAY_MINUTES( 1 ), 1 );
-    }
-    if( state == FIXBOY_CRAFT )
-    {
-        fix_ByRecipe( player, PID_CHITIN_ARMOR_RECIPE, state, craft );
-        fix_Something( player, SCENERY_STOVE, 10, LVAR_sf_chitin_armor_recipe_known, state, GAME_DAY_MINUTES( 1 ), 1 );
-        if( _CritCountItem( player, PID_METAL_TRASH ) > 3 )
-        {
-            int chance = 0, luck = player.Stat[ ST_LUCK ];
-            if( luck > 9 )
-                chance = 15;
-            if( luck > 7 && luck < 10 )
-                chance = 10;
-            if( luck > 5 && luck < 8 )
-                chance = 5;
-
-            if( fix_AdvancedCraft( player, PID_CHITIN_ARMOR, PID_CHITIN_ARMOR_MK_II, chance, true, 2, state ) )
-                _CritDeleteItem( player, PID_METAL_TRASH, 2 );
-        }
-    }
-    return FIX_SUCCESS;
-}
-
-int fix_PlasmaGrenade( Critter& player, int state, CraftItem& craft ) // Рецепт на изготовление плазменных гранат. Хабологи.
-{
-    return fix_Something( player, SCENERY_HUB_WORKBENCH, DEFAULT_RADIUS, LVAR_sf_recipe_plasmagrenades, state, DEFAULT_TIMEOUT_MINUTES( player ), 50 );
-}
-
-int fix_NitroExpress( Critter& player, int state, CraftItem& craft ) // Рецепт на изготовление винтовки .700 калибра, включен по-умолчанию.
-{
-    return fix_Something( player, SCENERY_LATHE, DEFAULT_RADIUS, LVAR_fixboy_700_nitro_express, state, DEFAULT_TIMEOUT_MINUTES( player ), 2 );
-}
-
-int fix_NitroExpressRounds( Critter& player, int state, CraftItem& craft )
-{
-    return fix_Something( player, SCENERY_AMMO_PRESS, DEFAULT_RADIUS, LVAR_fixboy_ammo_press_operator, state, 6000, 10 );
-}
-
-int fix_AnyRounds( Critter& player, int state, CraftItem& craft )
-{
-    return fix_Something( player, SCENERY_AMMO_PRESS, DEFAULT_RADIUS, LVAR_fixboy_ammo_press_operator, state, 120, 10 );
 }
 
 /*                РЕЦЕПТЫ                */

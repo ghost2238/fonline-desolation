@@ -130,7 +130,7 @@ uint GetPoisonDuration( Critter& cr )
 }
 
 
-/* fallout2 revers engineering by Atom
+/* fallout2 reverse engineering by Atom
 
    One "tick" = 0.1 seconds (fallout's unit of time),
 
