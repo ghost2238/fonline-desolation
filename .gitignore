@@ -9,3 +9,7 @@
 
 /Tools/DialogEditor/DialogEditor.log
 /Tools/Mapper/**
+/Tools/ObjectEditor/ObjectEditor.log
+/Tools/ObjectEditor/ObjectEditor.user.cfg
+/Tools/ObjectEditor/Template.lang
+/Tools/ObjectEditor/listview.bin
