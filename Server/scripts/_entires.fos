@@ -1,0 +1,4 @@
+
+#define ENTIRE_PLAYER_START                  (240)
+#define ENTIRE_NO_LOG_OFF                    (241)
+#define ENTIRE_REPLICATION                   (242)

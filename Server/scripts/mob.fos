@@ -1,41 +1,5 @@
 // Author: heX, cvet
 
-/*
-        Generic mob ai
-        Только для мобов животных.
-        Var6..Var9 заняты.
-        рекомендуеться выставлять TeamId в диапазоне: 24..33
-        33 - не групируется, это значит что мобы не будут помогать друг другу.
-        также учтите что группа 0 тоже не группируется.
-
-        TODO:
-        сделать чтобы VarFear както уменьшался
-        включать обработчик idle только если рядом есть игрок.
-        таблица типа поведения монстров.
-        трусость мобов - сначало нужно отбегать от атакующего, затем старатся приблизится к дому на расстоянии от атакующего.
-        {
-                атака тех кто атакует (нужно для блокировки чита 'бегун')
-                при условии что злость(Fury) меньше X (нужно для блокировки 'pin-pong' чита)
-                и текущий враг не на расстоянии поражения
-                и новый враг на не слишком большой дистанции
-        }
-        отступление если игрок атакует из недостижимой точки (чит 'безопастной атаки').
-        ? блокировка возвращения домой если мы уже стоим впритык к противнику и успешно атакуем его.
-        ? отступать домой только если вся группа так решила.
-
-        тест:
-        DONE запрет атаковать всех из своей группы (ситуация вознимает если они блокируют проход)
-        DONE трусость мобов - если то он не должен идти в атаку при атаке
-
-        ok:
-        DONE трусость мобов - отступление если мало жизней
-        DONE скан при возвращении домой (Watch)
-        DONE сброс VarX при респавне
-        DONE трусость мобов - добавить отступление при больших потерях
-        DONE блокировка GoHo если они уже дома
-        DONE остановка преследования при большой дистанции - отладить (несрабатывает)
- */
-
 #include "_macros.fos"
 #include "_npc_pids.fos"
 
@@ -60,33 +24,6 @@ import uint EraseAttackPlane( Critter& npc, Critter& target ) from "npc_planes";
 #define VarFury                  StatBase[ ST_VAR7 ]
 #define VarFear                  StatBase[ ST_VAR8 ]
 #define VarMaxFear               StatBase[ ST_VAR9 ]
-
-const uint16[] Pids_BestialMobs =
-{
-    383,   // Ant
-    7,     // SmToughDeathclaw
-    8,     // ToughDeathclaw
-    116,   // Rat
-    118,   // PigRat
-    NPC_PID_SmallSilverGecko, NPC_PID_ToughSilverGecko, NPC_PID_GoldenGecko, NPC_PID_ToughGoldenGecko, NPC_PID_FireGecko, NPC_PID_ToughFireGecko,
-    NPC_PID_SmallRadscorpion, NPC_PID_LargeRadscorpion,
-    NPC_PID_RegularRat, NPC_PID_RegularPigRat, NPC_PID_ToughPigRat,
-    NPC_PID_Molerat, NPC_PID_GreaterMolerat, NPC_PID_MutatedMolerat,
-    NPC_PID_Ant,
-    // NPC_PID_SporePlant, // - Отключил. У них нет ножек, нужен другой 'алгоритм'.
-    NPC_PID_WildBrahmin,
-    NPC_PID_Mantis, NPC_PID_MediumMantis,
-    NPC_PID_WildDog,
-    NPC_PID_Alien, NPC_PID_ToughAlien,
-    NPC_PID_SmToughDeathclaw, NPC_PID_ToughDeathclaw,
-    NPC_PID_Centaur, NPC_PID_MeanCentaur,
-    NPC_PID_Floater, NPC_PID_NastyFloater
-};
-
-void _MobsMapInit( Map& map, bool firstTime )
-{
-    ActivateMobScript( map );
-}
 
 void _MobInit( Critter& npc, bool firstTime )
 {
@@ -114,19 +51,6 @@ void _MobInit( Critter& npc, bool firstTime )
     npc.SetEvent( CRITTER_EVENT_DEAD,        "_MyDeath" );
     npc.SetEvent( CRITTER_EVENT_RESPAWN,     "_Respawn" );
     npc.SetEvent( CRITTER_EVENT_ATTACKED,    "_Attacked" );
-}
-
-void ActivateMobScript( Map& map ) // Export
-{
-    Critter@[] critters;
-    for( uint i = 0, j = Pids_BestialMobs.length(); i < j; i++ )
-        map.GetCritters( Pids_BestialMobs[ i ], FIND_ALL | FIND_ONLY_NPC, critters );
-
-    for( uint i = 0, j = critters.length(); i < j; i++ )
-    {
-        if( critters[ i ].GetScriptId() == 0 && ( critters[ i ].Stat[ ST_TEAM_ID ] == 0 || ( critters[ i ].Stat[ ST_TEAM_ID ] >= 24 && critters[ i ].Stat[ ST_TEAM_ID ] <= 33 ) ) )
-            critters[ i ].SetScript( "_MobInit" );
-    }
 }
 
 void ResetVars( Critter& npc )

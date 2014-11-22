@@ -907,18 +907,6 @@ void NpcReturn( Critter& cr, int replTime, int, int )
 }
 
 #include "_npc_pids.fos"
-const uint16[] pids = { 54, 54, 54, 54, NPC_PID_MaleOrphan, NPC_PID_FemaleOrphan, NPC_PID_HealthyFemaleSlave, NPC_PID_HealthyMaleSlave, NPC_PID_HealthyFemaleSlave, NPC_PID_HealthyMaleSlave, NPC_PID_HealthyFemaleSlave, NPC_PID_HealthyMaleSlave, NPC_PID_MaleOrphan, NPC_PID_FemaleOrphan, NPC_PID_HealthyFemaleSlave, NPC_PID_HealthyMaleSlave, NPC_PID_AverageMerchantMale, NPC_PID_WeakMeleeGuardMale, NPC_PID_RaiderMale, NPC_PID_RaiderFemale };
-
-void AddHostile( Critter& iam, int, int, int )
-{
-    Map@     map = iam.GetMap();
-    uint16   hx = iam.HexX, hy = iam.HexY;
-    map.MoveHexByDir( hx, hy, iam.Dir, 1 );
-    Critter@ hostile = map.AddNpc( pids[ Random( 0, pids.length() - 1 ) ], hx, hy, iam.Dir, null, null, null );
-    hostile.StatBase[ ST_TEAM_ID ] = 19;
-    // hostile.SetStat(ST_REPLICATION_TIME,Random(5,10));
-    CreateTimeEvent( __FullSecond, "e_HostileMove", hostile.Id, true );
-}
 
 uint SufferingLastTime = 0;
 uint e_HostileMove( uint[] @ values )
