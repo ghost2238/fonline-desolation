@@ -2,8 +2,8 @@
 Version              5
 MaxHexX              164
 MaxHexY              145
-WorkHexX             95
-WorkHexY             44
+WorkHexX             80
+WorkHexY             54
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -10569,5 +10569,455 @@ MapObjType           2
 ProtoId              2067
 MapX                 96
 MapY                 100
+
+MapObjType           0
+ProtoId              41
+MapX                 77
+MapY                 51
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              42
+MapX                 75
+MapY                 52
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              43
+MapX                 77
+MapY                 53
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              50
+MapX                 75
+MapY                 54
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              51
+MapX                 77
+MapY                 55
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              63
+MapX                 75
+MapY                 56
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              80
+MapX                 69
+MapY                 52
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              83
+MapX                 69
+MapY                 50
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              102
+MapX                 69
+MapY                 55
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              101
+MapX                 69
+MapY                 57
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              123
+MapX                 69
+MapY                 59
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              278
+MapX                 69
+MapY                 61
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              132
+MapX                 79
+MapY                 46
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              133
+MapX                 79
+MapY                 48
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              1
+MapX                 68
+MapY                 40
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              3
+MapX                 68
+MapY                 42
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              4
+MapX                 68
+MapY                 44
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              5
+MapX                 68
+MapY                 46
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              6
+MapX                 68
+MapY                 48
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              7
+MapX                 68
+MapY                 50
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              8
+MapX                 68
+MapY                 52
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              9
+MapX                 70
+MapY                 41
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              10
+MapX                 70
+MapY                 43
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              11
+MapX                 70
+MapY                 45
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              12
+MapX                 70
+MapY                 47
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              13
+MapX                 70
+MapY                 49
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              14
+MapX                 70
+MapY                 51
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              15
+MapX                 70
+MapY                 53
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              16
+MapX                 70
+MapY                 55
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              17
+MapX                 70
+MapY                 57
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              27
+MapX                 70
+MapY                 39
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              18
+MapX                 70
+MapY                 59
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              19
+MapX                 70
+MapY                 61
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              21
+MapX                 72
+MapY                 61
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              22
+MapX                 72
+MapY                 59
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              23
+MapX                 72
+MapY                 57
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              24
+MapX                 72
+MapY                 55
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              25
+MapX                 72
+MapY                 53
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              26
+MapX                 72
+MapY                 51
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              28
+MapX                 72
+MapY                 49
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              29
+MapX                 66
+MapY                 39
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              30
+MapX                 66
+MapY                 41
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              34
+MapX                 72
+MapY                 47
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              33
+MapX                 72
+MapY                 45
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              35
+MapX                 66
+MapY                 50
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              36
+MapX                 66
+MapY                 52
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              39
+MapX                 72
+MapY                 43
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              38
+MapX                 72
+MapY                 41
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              40
+MapX                 72
+MapY                 39
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+
+MapObjType           0
+ProtoId              37
+MapX                 74
+MapY                 39
+Critter_Dir          3
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
 
 
