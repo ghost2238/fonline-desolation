@@ -1436,15 +1436,6 @@
 # pragma bindfield "const uint   ProtoItem::Ammo_DmgMult -> 308"
 # pragma bindfield "const uint   ProtoItem::Ammo_DmgDiv  -> 312"
 
-// Test function
-# ifdef __SERVER
-#  pragma bindfunc "void TestFunc(string&) -> fonline_test.dll TestFunc"
-# endif
-# ifdef __CLIENT
-// Next line produce error due to disabled AllowClientNativeCalls
-// #  pragma bindfunc "void TestFunc(string&) -> fonline_test_client.dll TestFunc"
-# endif
-
-#endif // SKIP_PRAGMAS
+#endif // SKIP_PRAGMAS  
 
 #endif // __DEFINES__

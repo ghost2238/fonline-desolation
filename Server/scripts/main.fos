@@ -75,7 +75,7 @@ bool start()
     SetSendParameter( DAMAGE_RIGHT_LEG, true );
     SetSendParameter( DAMAGE_LEFT_LEG, true );
     // Item slots, passed with -
-    SetSendParameter( -SLOT_HAND1, true, "fonline_tla.dll@allowSlot_Hand1" );
+    SetSendParameter( -SLOT_HAND1, true );
     SetSendParameter( -SLOT_ARMOR, true );
     // Some flags for correct client working
     SetSendParameter( MODE_NO_BARTER, true );
