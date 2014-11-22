@@ -1,0 +1,6 @@
+/Server/maps/*.fomapb
+/Server/scripts/*.fosb
+/Server/scripts/*.fosp
+/Server/save/**
+/Server/dumps/*
+/Server/profiler/*
