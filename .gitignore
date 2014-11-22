@@ -4,3 +4,5 @@
 /Server/save/**
 /Server/dumps/*
 /Server/profiler/*
+
+/Tools/DialogEditor/DialogEditor.log
