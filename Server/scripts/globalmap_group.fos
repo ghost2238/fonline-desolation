@@ -33,7 +33,7 @@ void global_process( int processType, Critter& cr, Item@ car,
         float lastDist = DISTANCE( curX, curY, toX, toY );
 
         // Calcuate speed
-        float speedPix = speed * float(__GlobalMapMoveTime) / 1000.0f;
+        float speedPix = speed * float(__GlobalMapMoveTime) / 5000.0f;
         float speedAngle = atan2( toY - curY, toX - curX );
         float speedX = cos( speedAngle ) * speedPix;
         float speedY = sin( speedAngle ) * speedPix;

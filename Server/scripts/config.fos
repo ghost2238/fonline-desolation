@@ -15,87 +15,88 @@
 
 void InitializeGame()                    // Export
 {
-    // / Init global vars
-    __ScriptRunSuspendTimeout   = 10000; // In milliseconds
-    __ScriptRunMessageTimeout   = 5000;  // In milliseconds
-    __LoggingVars               = false;
+    // Init global vars
+    __AccountPlayTime           = 0; // In real seconds, 0 to disable
+    __ApCostAimArms             = 1;
+    __ApCostAimEyes             = 1;
+    __ApCostAimGroin            = 1;
+    __ApCostAimHead             = 1;
+    __ApCostAimLegs             = 1;
+    __ApCostAimTorso            = 1;
+    __ApRegeneration            = 7000;
+    __BagRefreshTime            = 60;     // Real minutes
+    __Breaktime                 = 1200;
+    __BruteForceTick            = 100;   // In milliseconds
+    __CritterIdleTick           = 10000;
+    __CustomItemCost            = false;
+    __DeadHitPoints             = -20;
     __DisableTcpNagle           = true;
     __DisableZlibCompression    = false;
-    __FloodSize                 = 2048;  // In bytes
-    __BruteForceTick            = 100;   // In milliseconds
-    __NoAnswerShuffle           = false;
+    __DlgBarterMinTime          = 50000;
+    __DlgTalkMinTime            = 100000;
+    __EncounterTime             = 5000;
     __FixBoyDefaultExperience   = 50;
-    __SneakDivider              = 6;
-    __LevelCap                  = 666;
-    __LevelCapAddExperience     = true;
-    __LookNormal                = 20;
-    __LookMinimum               = 3;
-    __CritterIdleTick           = 10000;
-    __TurnBasedTick             = 30000;
-    __Breaktime                 = 1200;
-    __TimeoutTransfer           = 0;
-    __TimeoutBattle             = REAL_SECOND( 45 );
-    __ApRegeneration            = 7000;
-    __RtApCostCritterWalk       = 0;     // 1 AP == 100, maximim 255
-    __RtApCostCritterRun        = 0;     // 1 AP == 100, maximim 255
-    __RtApCostMoveItemContainer = 0;
-    __RtApCostMoveItemInventory = 2;
-    __RtApCostPickItem          = 1;
-    __RtApCostDropItem          = 1;
-    __RtApCostReloadWeapon      = 2;
-    __RtApCostPickCritter       = 1;
-    __RtApCostUseItem           = 3;
-    __RtApCostUseSkill          = 2;
-    __RtAlwaysRun               = false;
-    __TbApCostCritterMove       = 1;
-    __TbApCostMoveItemContainer = 0;
-    __TbApCostMoveItemInventory = 2;
-    __TbApCostPickItem          = 3;
-    __TbApCostDropItem          = 2;
-    __TbApCostReloadWeapon      = 2;
-    __TbApCostPickCritter       = 3;
-    __TbApCostUseItem           = 3;
-    __TbApCostUseSkill          = 3;
-    __TbAlwaysRun               = false;
-    __ApCostAimEyes             = 1;
-    __ApCostAimHead             = 1;
-    __ApCostAimGroin            = 1;
-    __ApCostAimTorso            = 1;
-    __ApCostAimArms             = 1;
-    __ApCostAimLegs             = 1;
-    __HitAimEyes                = 60;
-    __HitAimHead                = 40;
-    __HitAimGroin               = 30;
-    __HitAimTorso               = 0;
-    __HitAimArms                = 30;
-    __HitAimLegs                = 20;
-    __RunOnCombat               = false;
-    __RunOnTransfer             = true;
-    __RunOnTurnBased            = false;
-    __GlobalMapWidth            = 28;     // Maximum 100
-    __GlobalMapHeight           = 30;     // Maximum 100
-    __GlobalMapZoneLength       = 50;     // Maximum 500
+    __FloodSize                 = 2048;  // In bytes
+    __GlobalMapHeight           = 7;     // Maximum 100
     __GlobalMapMaxGroupCount    = 10;
     __GlobalMapMoveTime         = 250;
-    __EncounterTime             = 5000;
-    __DeadHitPoints             = -20;
-    __BagRefreshTime            = 60;     // Real minutes
-    __WisperDist                = 2;
-    __ShoutDist                 = 400;
-    __CustomItemCost            = false;
-    __RegistrationTimeout       = 0; // In real seconds, 0 to disable
-    __AccountPlayTime           = 0; // In real seconds, 0 to disable
-    __TalkDistance              = 3;
-    __NpcMaxTalkers             = 1;
-    __MinNameLength             = 4;       // Minimum 1
-    __MaxNameLength             = 12;      // Maximum 30
-    __PermanentDeath            = 0;       // Disable
-    __DlgTalkMinTime            = 100000;
-    __DlgBarterMinTime          = 50000;
-    __MinimumOfflineTime        = 180000;  // 3 minutes
-    __MainStoryLineActive       = true;
-    __NoPvpMaps                 = true;
+    __GlobalMapWidth            = 10;     // Maximum 100
+    __GlobalMapZoneLength       = 50;     // Maximum 500
+    __HitAimArms                = 30;
+    __HitAimEyes                = 60;
+    __HitAimGroin               = 30;
+    __HitAimHead                = 40;
+    __HitAimLegs                = 20;
+    __HitAimTorso               = 0;
+    __LevelCap                  = 12;
+    __LevelCapAddExperience     = true;
+    __LoggingVars               = false;
+    __LookMinimum               = 3;
+    __LookNormal                = 20;
+    __MainStoryLineActive       = false;
     __MaxLifeLevelSoftCap       = 36;
+    __MaxNameLength             = 12;      // Maximum 30
+    __MinNameLength             = 4;       // Minimum 1
+    __MinimumOfflineTime        = 180000;  // 3 minutes
+    __NoAnswerShuffle           = false;
+    __NoPvpMaps                 = true;
+    __NpcMaxTalkers             = 1;
+    __PermanentDeath            = 0;       // Disable
+    __RegistrationTimeout       = 0; // In real seconds, 0 to disable
+    __RtAlwaysRun               = false;
+    __RtApCostCritterRun        = 0;     // 1 AP == 100, maximim 255
+    __RtApCostCritterWalk       = 0;     // 1 AP == 100, maximim 255
+    __RtApCostDropItem          = 1;
+    __RtApCostMoveItemContainer = 0;
+    __RtApCostMoveItemInventory = 2;
+    __RtApCostPickCritter       = 1;
+    __RtApCostPickItem          = 1;
+    __RtApCostReloadWeapon      = 2;
+    __RtApCostUseItem           = 3;
+    __RtApCostUseSkill          = 2;
+    __RunOnCombat               = true;
+    __RunOnTransfer             = true;
+    __RunOnTurnBased            = false;
+    __ScriptRunMessageTimeout   = 5000;  // In milliseconds
+    __ScriptRunSuspendTimeout   = 10000; // In milliseconds
+    __ShoutDist                 = 400;
+    __SneakDivider              = 6;
+    __TalkDistance              = 3;
+    __TbAlwaysRun               = false;
+    __TbApCostCritterMove       = 1;
+    __TbApCostDropItem          = 2;
+    __TbApCostMoveItemContainer = 0;
+    __TbApCostMoveItemInventory = 2;
+    __TbApCostPickCritter       = 3;
+    __TbApCostPickItem          = 3;
+    __TbApCostReloadWeapon      = 2;
+    __TbApCostUseItem           = 3;
+    __TbApCostUseSkill          = 3;
+    __TimeoutBattle             = REAL_SECOND( 45 );
+    __TimeoutTransfer           = 0;
+    __TurnBasedTick             = 30000;
+    __WisperDist                = 2;    
+    
     // Look modifiers
     __LookChecks = 0;                        // See Look checks in _defines.fos
     // __LookChecks |= LOOK_CHECK_DIR; // Nerfe look by directions of look
@@ -188,7 +189,7 @@ void InitializeGame()                    // Export
     #   endif
     #  endif
 
-    // / Parameters behavoiours
+    // / Parameters behaviours
     /*#  ifndef __CLIENT
        string dllName = "fonline_tla.dll@";
      #  endif
@@ -333,59 +334,20 @@ void InitializeGeometry()
     // __MapCameraAngle   angle for 3d critters rendering;
     // __MapSmoothPath    enable pathfinding path smoothing;
     // __MapDataPrefix    path and prefix for names used for geometry sprites.
+    
+    // Fallout geometry
+    __MapHexagonal     = true;
+    __MapHexWidth      = 32;
+    __MapHexHeight     = 16;
+    __MapHexLineHeight = 12;
+    __MapTileOffsX     = -8;
+    __MapTileOffsY     = 34;
+    __MapTileStep      = 2;
+    __MapRoofOffsX     = -8;
+    __MapRoofOffsY     = -64;
+    __MapRoofSkipSize  = 2;
+    __MapCameraAngle   = 25.7f;
+    __MapSmoothPath    = true;
+    __MapDataPrefix    = "art/geometry/fallout_";
 
-    switch( __GeometryType )
-    {
-    case GEOMETRY_FALLOUT:
-        __MapHexagonal     = true;
-        __MapHexWidth      = 32;
-        __MapHexHeight     = 16;
-        __MapHexLineHeight = 12;
-        __MapTileOffsX     = -8;
-        __MapTileOffsY     = 34;
-        __MapTileStep      = 2;
-        __MapRoofOffsX     = -8;
-        __MapRoofOffsY     = -64;
-        __MapRoofSkipSize  = 2;
-        __MapCameraAngle   = 25.7f;
-        __MapSmoothPath    = true;
-        __MapDataPrefix    = "art/geometry/fallout_";
-        break;
-
-    case GEOMETRY_TACTICS:
-        __MapHexagonal     = false;
-        __MapHexWidth      = 36;
-        __MapHexHeight     = 18;
-        __MapHexLineHeight = 9;
-        __MapTileOffsX     = 18;
-        __MapTileOffsY     = 18;
-        __MapTileStep      = 1;
-        __MapRoofOffsX     = 18;
-        __MapRoofOffsY     = -72;
-        __MapRoofSkipSize  = 2;
-        __MapCameraAngle   = 30.0f;
-        __MapSmoothPath    = false;
-        __MapDataPrefix    = "art/geometry/tactics_";
-        break;
-
-    case GEOMETRY_ARCANUM:
-        __MapHexagonal     = false;
-        __MapHexWidth      = 80;
-        __MapHexHeight     = 40;
-        __MapHexLineHeight = 20;
-        __MapTileOffsX     = 40;
-        __MapTileOffsY     = 40;
-        __MapTileStep      = 1;
-        __MapRoofOffsX     = -80;
-        __MapRoofOffsY     = -180;
-        __MapRoofSkipSize  = 4;
-        __MapCameraAngle   = 30.0f;
-        __MapSmoothPath    = true;
-        __MapDataPrefix    = "art/geometry/arcanum_";
-        break;
-
-    default:
-        Log( "Wrong geometry type value." );
-        break;
-    }
 }
